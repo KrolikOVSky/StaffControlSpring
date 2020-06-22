@@ -13,7 +13,17 @@ public class MainController {
         return "home";
     }
 
+    @GetMapping("/support")
+    public String support(Model model) {
+        model.addAttribute("title", "Main Page");
+        return "support";
+    }
+
+
+
 }
+
+
 
 
 
