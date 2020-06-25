@@ -11,5 +11,6 @@ public class LoginController {
     public String login(Model model) {
         model.addAttribute("title", "Login Page");
         return "login";
+
     }
 }
