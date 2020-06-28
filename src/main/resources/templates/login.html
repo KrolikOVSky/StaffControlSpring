@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:h3th="http://www.w3.org/1999/html">
 <head>
     <title>Login Page</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -11,9 +11,25 @@
 
 <div class="container mt-5">
     <h1>Login Page</h1>
-</div>
+
+    <!--<div th:each="el : ${staffs}" class="alert alert-info mt-2">
+        <h2 th:text="${el.id}"></h2>
+        <h3 th:text="${el.name}"></h3>
+        <p th:text="${el.position}"></p>
+        <h4 th:text="${el.everyDaySalary}"></h4>
+    </div>-->
+
+    <div>
+        <form action="">
+            <input type="text" name="name" placeholder="Введите личный идентификационный номер" class="form-control">
+            <input type="text" name="daySalary" placeholder="Введите личный идентификационный номер" class="form-control">
+            <input type="text" name="" placeholder="Введите личный идентификационный номер" class="form-control">
+            <input type="text" name="uid" placeholder="Введите личный идентификационный номер" class="form-control">
+            <input type="text" name="uid" placeholder="Введите личный идентификационный номер" class="form-control">
+        </form>
+    </div>
+
 
 <div th:insert="blocks/footer :: footer"></div>
-<p th:text="'Hello, ' + ${title} + '!'"/>
 </body>
 </html>
