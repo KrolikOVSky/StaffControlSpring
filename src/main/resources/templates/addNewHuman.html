@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Login Page</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+
+
+<div class="container mt-5">
+
+    <form>
+        <input type="text" name="name" placeholder="Введите имя сотрудника" class="form-control"><br/>
+        <input type="text" name="uid" placeholder="Введите ежедневный оклад" class="form-control"><br/>
+        <label for="level">Выберите должность сотрудника</label>
+        <select name="level" id="level">
+            <option/>
+            <div th:each="el : ${levels}">
+                <option th:text="${el}"/>
+            </div>
+        </select><br/>
+        <button type="submit" class="btn btn-lg btn-primary btn-block">Ввести</button>
+
+
+    </form>
+
+</div>
+
+
+<div th:insert="blocks/footer :: footer"></div>
+</body>
+</html>

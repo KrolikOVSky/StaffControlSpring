@@ -1,35 +1,63 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:h3th="http://www.w3.org/1999/html">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Login Page</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 </head>
-<body>
+<body class="text-center">
 
 <header th:insert="blocks/header :: header"></header>
 
 <div class="container mt-5">
-    <h1>Login Page</h1>
-
-    <!--<div th:each="el : ${staffs}" class="alert alert-info mt-2">
-        <h2 th:text="${el.id}"></h2>
-        <h3 th:text="${el.name}"></h3>
-        <p th:text="${el.position}"></p>
-        <h4 th:text="${el.everyDaySalary}"></h4>
-    </div>-->
+    <h1>Вход в систему</h1>
 
     <div>
-        <form action="">
-            <input type="text" name="name" placeholder="Введите личный идентификационный номер" class="form-control">
-            <input type="text" name="daySalary" placeholder="Введите личный идентификационный номер" class="form-control">
-            <input type="text" name="" placeholder="Введите личный идентификационный номер" class="form-control">
-            <input type="text" name="uid" placeholder="Введите личный идентификационный номер" class="form-control">
-            <input type="text" name="uid" placeholder="Введите личный идентификационный номер" class="form-control">
+
+        <div th:if="${param.error}">
+            Invalid username and password.
+        </div>
+        <div th:if="${param.logout}">
+            You have been logged out.
+        </div>
+
+        <form th:action="@{/login}" method="post">
+
+            <div>
+                <input type="text" name="username" placeholder="Логин" required="" autofocus="" class="form-control"/>
+            </div>
+            <div>
+                <input type="password" name="password" placeholder="Пароль" required="" class="form-control"/>
+            </div>
+            <div>
+                <input type="submit" value="Вход" class="btn btn-lg btn-primary btn-block"/>
+            </div>
+
+
+            <!--<label for="inputLogin" class="sr-only">Логин</label>
+            <input type="text" id="inputLogin" class="form-control" placeholder="Логин" required="" autofocus="">
+            <label for="inputPassword" class="sr-only">Пароль</label>
+            <input type="password" id="inputPassword" class="form-control" placeholder="Пароль" required="">
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>-->
         </form>
     </div>
 
 
-<div th:insert="blocks/footer :: footer"></div>
+    <div th:insert="blocks/footer :: footer"></div>
 </body>
+<!--<body>
+
+<div th:if="${param.error}">
+    Invalid username and password.
+</div>
+<div th:if="${param.logout}">
+    You have been logged out.
+</div>
+<form th:action="@{/login}" method="post">
+    <div><label> User Name : <input type="text" name="username"/> </label></div>
+    <div><label> Password: <input type="password" name="password"/> </label></div>
+    <div><input type="submit" value="Sign In"/></div>
+</form>
+</body>-->
+
 </html>

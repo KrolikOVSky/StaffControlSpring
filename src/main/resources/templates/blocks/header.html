@@ -1,12 +1,17 @@
 <div th:fragment="header">
     <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-        <h5 class="my-0 mr-md-auto font-weight-normal">Staff control</h5>
+        <!--        <h5 class="my-0 mr-md-auto font-weight-normal">Staff control</h5>-->
+        <a href="/" class="my-0 mr-md-auto font-weight-normal"><h5>Staff control</h5></a>
+
         <nav class="my-2 my-md-0 mr-md-3">
             <a class="p-2 text-dark" href="/">Main</a>
             <a class="p-2 text-dark" href="/table">Table</a>
-<!--            <a class="p-2 text-dark" href="/support">Support</a>-->
-<!--            <a class="p-2 text-dark" href="/google">google</a>-->
+            <a class="p-2 text-dark" href="/addHuman">Add Human</a>
+            <!--            <a class="p-2 text-dark" href="/google">google</a>-->
         </nav>
         <a class="btn btn-outline-primary" href="/login">Log In</a>
+        <form th:action="@{/logout}" method="post">
+            <button class="btn btn-outline-primary" type="submit" value="Sign Out">Sign Out</button>
+        </form>
     </div>
 </div>

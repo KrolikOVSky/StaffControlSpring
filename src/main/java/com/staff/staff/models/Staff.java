@@ -13,6 +13,15 @@ public class Staff {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    private String uid;
+
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
+    }
 
     private String name, position;
     private Date time;
